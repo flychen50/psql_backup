@@ -1,0 +1,4 @@
+7 * * * * postgres /bin/bash /data0/postgres/base.sh >> /data0/postgres/base_root.log
+*/5 * * * * postgres /bin/bash /data0/postgres/xlog.sh >> /data0/postgres/xlog_root.log
+0 0 * * 7 postgres /bin/bash > /data0/postgres/base.log
+0 0 * * 7 postgres /bin/bash > /data0/postgres/xlog.log
