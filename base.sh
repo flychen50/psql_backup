@@ -5,6 +5,7 @@ export BUBASE=/opt/bubase
 export BUXLOG=/opt/buxlog
 today=`date +%Y-%m-%d.%H:%M:%S`
 tar -zcPvf /data0/postgres/psql_base_$today.tar.gz $BUBASE
+tar -zcPvf /data0/postgres/psql_xlog_$today.tar.gz $BUXLOG
 rm -rf $BUBASE/*
 rm -rf $BUXLOG/*
 psql -d template1 -c "select PG_START_BACKUP('backup baseline')"
