@@ -11,7 +11,9 @@ archive_command = 'cp %p /opt/buxlog/%f' ///opt/buxlog为增量备份的目录
 su postgres
 cd /data0/postgres/
 /etc/init.d/postgresql stop
-rm -rf   /var/lib/postgresql/9.3/main
+cd /var/lib/postgresql/9.3/main/
+已经到进入数据目录后在执行rm -rf * 操作
+rm -rf *
 cp -R /opt/bubase/* .
 recovery.conf 改一行, 如下:
 restore_command='cp /opt/buxlog/%f %p'
